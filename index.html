@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Work Smart App</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Arial', sans-serif; }
+    body { background: #f4f9ff; }
+
+    .app {
+      max-width: 480px;
+      margin: auto;
+      background: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      padding: 20px;
+      background: linear-gradient(135deg, #4facfe, #00c6ff);
+      color: white;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+
+    header h1 { font-size: 22px; margin-bottom: 8px; }
+    header p { font-size: 13px; line-height: 1.4; opacity: 0.9; }
+
+    .content { padding: 20px; flex: 1; }
+
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 14px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .card:hover { transform: scale(1.02); }
+
+    .card h2 { font-size: 16px; color: #2b7cff; margin-bottom: 6px; }
+    .card p { font-size: 13px; color: #555; }
+
+    .detail {
+      display: none;
+      padding: 15px;
+      background: #eef6ff;
+      border-radius: 12px;
+      margin-top: 10px;
+      font-size: 13px;
+    }
+
+    .cta {
+      padding: 20px;
+    }
+
+    .cta button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 30px;
+      background: #2b7cff;
+      color: white;
+      font-size: 15px;
+      box-shadow: 0 6px 14px rgba(43,124,255,0.3);
+      cursor: pointer;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-around;
+      padding: 10px;
+      border-top: 1px solid #eee;
+      background: #fff;
+    }
+
+    .nav button {
+      background: none;
+      border: none;
+      font-size: 12px;
+      color: #888;
+      cursor: pointer;
+    }
+
+    .nav button.active { color: #2b7cff; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="app">
+
+    <header>
+      <h1>AI Work Smart</h1>
+      <p>AI 협업으로 생산성을 높이고, 창의적인 일에 집중하세요.</p>
+    </header>
+
+    <div class="content" id="home">
+      <div class="card" onclick="toggleDetail(this)">
+        <h2>AI 워크 스마트</h2>
+        <p>실전 활용법 & 성공 사례</p>
+        <div class="detail">업무 자동화, 문서 작성, 보고서 생성 등 실무 중심 사례를 제공합니다.</div>
+      </div>
+
+      <div class="card" onclick="toggleDetail(this)">
+        <h2>AI 동료 만들기</h2>
+        <p>No-code / Low-code 자동화</p>
+        <div class="detail">Zapier, Make, GPT 등을 활용한 자동화 워크플로우를 구축합니다.</div>
+      </div>
+
+      <div class="card" onclick="toggleDetail(this)">
+        <h2>데이터 인사이트</h2>
+        <p>분석 & 시각화</p>
+        <div class="detail">데이터를 기반으로 의사결정을 돕는 시각화와 분석 방법을 제공합니다.</div>
+      </div>
+    </div>
+
+    <div class="content" id="about" style="display:none;">
+      <div class="card">
+        <h2>소개</h2>
+        <p>AI를 활용해 업무 효율을 높이고 싶은 직장인을 위한 실전 중심 서비스입니다.</p>
+      </div>
+    </div>
+
+    <div class="cta">
+      <button onclick="openCoffeeChat()">☕ 커피챗 신청</button>
+    </div>
+
+    <div class="nav">
+      <button class="active" onclick="showTab('home', this)">홈</button>
+      <button onclick="showTab('about', this)">소개</button>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleDetail(el) {
+      const detail = el.querySelector('.detail');
+      detail.style.display = detail.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function showTab(tabId, btn) {
+      document.querySelectorAll('.content').forEach(c => c.style.display = 'none');
+      document.getElementById(tabId).style.display = 'block';
+
+      document.querySelectorAll('.nav button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    function openCoffeeChat() {
+      alert('구글폼 링크로 연결 예정입니다.');
+      // location.href = "https://your-google-form-link";
+    }
+  </script>
+
+</body>
+</html>
