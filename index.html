@@ -3,14 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AI Work Smart</title>
+  <title>AI Work Smart | Jin</title>
 
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
 
-    body {
-      background: #f4f9ff;
-    }
+    body { background: #f4f9ff; }
 
     .app {
       max-width: 480px;
@@ -22,44 +20,38 @@
     }
 
     header {
-      padding: 20px;
+      padding: 24px;
       background: linear-gradient(135deg, #4facfe, #00c6ff);
       color: white;
-      border-bottom-left-radius: 20px;
-      border-bottom-right-radius: 20px;
+      border-bottom-left-radius: 24px;
+      border-bottom-right-radius: 24px;
     }
 
-    header h1 {
-      font-size: 22px;
-      margin-bottom: 8px;
-    }
+    header h1 { font-size: 22px; margin-bottom: 8px; }
+    header p { font-size: 13px; line-height: 1.5; }
 
-    header p {
-      font-size: 13px;
-      line-height: 1.4;
-    }
+    .content { padding: 20px; }
 
-    .content {
-      padding: 20px;
-      flex: 1;
+    .profile { text-align: center; margin-bottom: 20px; }
+    .profile img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      margin-bottom: 10px;
     }
+    .profile h2 { font-size: 18px; }
+    .profile p { font-size: 13px; color: #555; }
 
     .card {
-      background: #ffffff;
+      background: white;
       border-radius: 16px;
       padding: 16px;
       margin-bottom: 14px;
       box-shadow: 0 6px 14px rgba(0,0,0,0.06);
-      cursor: pointer;
-      transition: 0.2s;
     }
 
-    .card:hover {
-      transform: scale(1.02);
-    }
-
-    .card h2 {
-      font-size: 16px;
+    .card h3 {
+      font-size: 15px;
       color: #2b7cff;
       margin-bottom: 6px;
     }
@@ -69,18 +61,23 @@
       color: #555;
     }
 
-    .detail {
-      display: none;
-      padding: 12px;
+    .review {
+      font-size: 13px;
       background: #eef6ff;
+      padding: 10px;
       border-radius: 10px;
-      margin-top: 10px;
+      margin-top: 8px;
+    }
+
+    .price {
+      background: #f8fbff;
+      padding: 12px;
+      border-radius: 10px;
+      margin-top: 8px;
       font-size: 13px;
     }
 
-    .cta {
-      padding: 20px;
-    }
+    .cta { padding: 20px; }
 
     .cta button {
       width: 100%;
@@ -94,25 +91,18 @@
       box-shadow: 0 6px 14px rgba(43,124,255,0.3);
     }
 
-    .nav {
-      display: flex;
-      justify-content: space-around;
-      padding: 10px;
-      border-top: 1px solid #eee;
-      background: #fff;
-    }
-
-    .nav button {
-      background: none;
-      border: none;
+    .cta p {
       font-size: 12px;
-      color: #888;
-      cursor: pointer;
+      text-align: center;
+      margin-top: 8px;
+      color: #666;
     }
 
-    .nav button.active {
-      color: #2b7cff;
-      font-weight: bold;
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: #999;
+      padding: 20px;
     }
   </style>
 </head>
@@ -122,84 +112,70 @@
 
     <header>
       <h1>AI Work Smart</h1>
-      <p>
-        AI 활용이 막막한 직장인을 위해<br>
-        실무에 바로 적용 가능한 AI 협업 방법으로<br>
-        업무 생산성을 극대화합니다.
-      </p>
+      <p>AI 협업으로 생산성을 높이고, 창의적인 일에 집중하세요</p>
     </header>
 
-    <!-- 홈 -->
-    <div class="content" id="home">
-      <div class="card" onclick="toggleDetail(this)">
-        <h2>AI 워크 스마트</h2>
-        <p>실전 활용법 & 성공 사례</p>
-        <div class="detail">
-          업무 자동화, 보고서 작성, GPT 활용 사례 등 실무 중심 전략
-        </div>
+    <div class="content">
+
+      <!-- 프로필 -->
+      <div class="profile">
+        <img src="https://via.placeholder.com/90" alt="profile" />
+        <h2>진 (AI · 코딩 강사)</h2>
+        <p>초·중·고 맞춤형 코딩 & AI 교육 전문가</p>
       </div>
 
-      <div class="card" onclick="toggleDetail(this)">
-        <h2>AI 동료 만들기</h2>
-        <p>No-code / Low-code 자동화</p>
-        <div class="detail">
-          Zapier, Make, GPT를 활용한 업무 자동화 시스템 구축
-        </div>
-      </div>
-
-      <div class="card" onclick="toggleDetail(this)">
-        <h2>데이터 인사이트</h2>
-        <p>분석 & 시각화</p>
-        <div class="detail">
-          데이터 기반 의사결정 및 시각화 방법 제공
-        </div>
-      </div>
-    </div>
-
-    <!-- 소개 -->
-    <div class="content" id="about" style="display:none;">
+      <!-- 코딩 강사 소개 -->
       <div class="card">
-        <h2>소개</h2>
+        <h3>👨‍🏫 코딩 강사 소개</h3>
         <p>
-          AI를 활용해 업무 생산성을 높이고 싶은 직장인을 위한 실전형 서비스입니다.
+          초등부터 고등까지 단계별 코딩 교육을 진행하며,
+          Scratch, Entry, Python을 활용한 맞춤형 수업을 제공합니다.
         </p>
+        <div class="review">✔ 초등: 블록코딩 (Entry, Scratch)</div>
+        <div class="review">✔ 중등: Python 기초 및 문제해결</div>
+        <div class="review">✔ 고등: 프로젝트 & AI 활용</div>
       </div>
+
+      <!-- 수업 과목 -->
+      <div class="card">
+        <h3>📚 수업 과목</h3>
+        <div class="review">✔ 블록코딩 (Entry / Scratch)</div>
+        <div class="review">✔ Python 기초 프로그래밍</div>
+        <div class="review">✔ AI 활용 (ChatGPT, TTS)</div>
+        <div class="review">✔ 피지컬 컴퓨팅 (아두이노)</div>
+        <div class="review">✔ 앱 개발 (앱인벤터)</div>
+        <div class="review">✔ 디지털 리터러시</div>
+      </div>
+
+      <!-- 후기 -->
+      <div class="card">
+        <h3>⭐ 수강 후기</h3>
+        <div class="review">“아이들이 코딩을 너무 좋아하게 되었어요!”</div>
+        <div class="review">“AI 수업이 이렇게 재미있는 줄 몰랐습니다.”</div>
+      </div>
+
+      <!-- 강의 안내 -->
+      <div class="card">
+        <h3>💰 강의 안내</h3>
+        <div class="price">✔ 학교 출강 / 방과후 수업</div>
+        <div class="price">✔ 기관 / 기업 교육</div>
+        <div class="price">✔ 1:1 맞춤 코딩 수업</div>
+      </div>
+
     </div>
 
-    <!-- 버튼 -->
+    <!-- CTA -->
     <div class="cta">
-      <button onclick="openCoffeeChat()">☕ 커피챗 신청</button>
+      <a href="https://forms.gle/dXZSbXj2diccm1u87" target="_blank">
+        <button>📩 강의 의뢰하기</button>
+      </a>
+      <p>학교 · 기관 · 개인 수업 모두 가능합니다</p>
     </div>
 
-    <!-- 하단 메뉴 -->
-    <div class="nav">
-      <button class="active" onclick="showTab('home', this)">홈</button>
-      <button onclick="showTab('about', this)">소개</button>
-    </div>
+    <footer>
+      © 2026 AI Work Smart | Jin
+    </footer>
 
   </div>
-
-  <script>
-    function toggleDetail(el) {
-      const detail = el.querySelector('.detail');
-      detail.style.display =
-        detail.style.display === 'block' ? 'none' : 'block';
-    }
-
-    function showTab(tabId, btn) {
-      document.querySelectorAll('.content').forEach(c => c.style.display = 'none');
-      document.getElementById(tabId).style.display = 'block';
-
-      document.querySelectorAll('.nav button').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-    }
-
-    function openCoffeeChat() {
-      // 👉 여기에 본인 구글폼 링크 넣기
-      const formUrl = "https://forms.gle/dXZSbXj2diccm1u87";
-      window.open(formUrl, '_blank');
-    }
-  </script>
-
 </body>
 </html>
